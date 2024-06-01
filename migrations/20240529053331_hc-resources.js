@@ -11,11 +11,8 @@ exports.up = function(knex) {
             table.string("resource_website").notNullable();
             table.string("resource_phone").notNullable();
             table.string("resource_email").notNullable();
-            table.string("resource_hours").notNullable(); // can this be an array?
-            table.string("resource_types").notNullable();
-            table.string("service_types").notNullable();
-            table.string("resource_navigation_access").notNullable(); // options include car, subway, streetcar, bus, walking
             table.boolean("is_accessible").notNullable();
+            table.timestamp("created_at").defaultTo(knex.fn.now());
         })
 };
 
