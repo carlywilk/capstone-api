@@ -29,5 +29,6 @@ const findResource = async (req, res) => {
 };
 
 module.exports = {
-    index
+    index,
+    findResource
 }
