@@ -12,7 +12,7 @@ const index = async(_req, res) => {
 const findResource = async (req, res) => {
     try {
         const resourceFound = await knex("resource")
-        .where({ id: req.params.id });
+        
 
         if (resourceFound === 0) {
             return res.status(404).json({
@@ -28,7 +28,32 @@ const findResource = async (req, res) => {
     }
 };
 
+const findServices = async (req, res) => {
+    try {
+        const resourceData = await knex
+            .select(
+                "services.id",
+                "services.service_type"
+            )
+            .from("resource")
+            .join("services", "services.resource_id", "resource.id")
+            .where( {resource_id: req.params.id} );
+        
+        if (resourceData.length === 0) {
+            return res.status(404).json({
+                message: `Resource with ID ${req.params.id} not found`
+            });
+        }
+        res.status(200).json(resourceData);
+    } catch (err) {
+        return res.status(500).json({
+            message: `Unable to retrieve services data for resource with ID ${req.params.id}`,
+        });
+    }
+}
+
 module.exports = {
     index,
-    findResource
+    findResource,
+    findServices
 }
