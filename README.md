@@ -2,7 +2,7 @@
 **Queer Health Hub (QHH)**
 
 
-<img src="./src/assets/logo/e5.png" width="100">
+<img src="./assets/logo/e5.png" width="100">
 
 
 ## Overview
@@ -18,24 +18,29 @@ Deployed website can be found [here]()
 
 ## Screenshots
 
+
 ## Tech Stack
 **Server:**
 - express
 - nodemon
 - cors
-- dotenv
 - knex
+- mysql2
+- dotenv
 
 
 ## Instructions & Installation
 
+
 ## Environment Variables
 To run this project, you will need to add the following environment variables to your server-side .env file:
-- PORT=
-- DB_HOST=
-- DB_NAME=
-- DB_USER=
-- DB_PASSWORD=
+```
+PORT=
+DB_HOST=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+```
 
 
 ## Run Locally 
@@ -48,7 +53,7 @@ git clone https://github.com/carlywilk/capstone-api.git
 ```
 cd carly-wilk-capstone-api
 ```
- 
+
 3. Install dependencies:
 ```
 npm install
@@ -61,9 +66,8 @@ npm start
 
 
 ### API Reference
-
 #### Get all resources
-```http
+```
   GET /api/resources
 ```
 | Parameter | Type     | Description                |
@@ -71,27 +75,24 @@ npm start
 | `api_key` | `string` | **Required**. Your API key |
 
 #### Get one resource
-```http
+```
   GET /api/resources/${id}
 ```
-| Parameter | Type     | Description                  |
-| :-------- | :------- | :--------------------------- |
-| `api_key` | `string` | **Required**. Your API key   |
-|           |          | **Required**. ID of resource |
+| Parameter | Type     | Description                                  |
+| :-------- | :------- | :------------------------------------------- |
+| `api_key` | `string` | **Required:** Your API key & ID of resource  |
 
 #### Get all services types for one resource
-```http
+```
   GET /api/resources/${id}/services
 ```
-| Parameter | Type     | Description                  |
-| :-------- | :------- | :--------------------------- |
-| `api_key` | `string` | **Required**. Your API key   |
-|           |          | **Required**. ID of resource |
-
+| Parameter | Type     | Description                                  |
+| :-------- | :------- | :------------------------------------------- |
+| `api_key` | `string` | **Required:** Your API key & ID of resource  |
 
 
 ## Insights and Lessons Learned
 
 
-
 ## Next Steps and Future Directions
+
