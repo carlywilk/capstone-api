@@ -86,6 +86,60 @@ exports.seed = async function(knex) {
       resource_email: "info@2spirits.org",
       is_accessible: true,
     },
+    {
+      id: 10,
+      resource_name: "THE 519", // add lat and lng 43.66667398942517, -79.38107104544095
+      resource_address: "519 Church Street",
+      resource_website: "https://www.the519.org/",
+      resource_phone: "(416) 392-6874",
+      resource_email: "Info@The519.org",
+      is_accessible: true,
+    },
+    {
+      id: 11,
+      resource_name: "Rainbow Health Ontario", // add lat and lng 43.662478115873796, -79.37211763009694
+      resource_address: "333 Sherbourne Street",
+      resource_website: "https://www.rainbowhealthontario.ca/",
+      resource_phone: "(416) 324-4100",
+      resource_email: "info@rainbowhealthontario.ca",
+      is_accessible: true,
+    },
+    {
+      id: 12,
+      resource_name: "Toronto Pflag", // add lat and lng 43.6857116140509, -79.32251557427611
+      resource_address: "200 Wolverleigh Boulevard",
+      resource_website: "https://www.torontopflag.org/",
+      resource_phone: "(416) 406-1727",
+      resource_email: "office@torontopflag.org",
+      is_accessible: true,
+    },
+    {
+      id: 13,
+      resource_name: "Planned Parenthood Toronto", // add lat and lng 43.66994287413304, -79.39749796078503
+      resource_address: "36B Prince Arthur Avenue",
+      resource_website: "https://ppt.on.ca/",
+      resource_phone: "(416) 961-0113",
+      resource_email: "ppt@ppt.on.ca",
+      is_accessible: true,
+    },
+    {
+      id: 14,
+      resource_name: "LGBT Youthline",
+      resource_address: "N/A",
+      resource_website: "https://www.youthline.ca/",
+      resource_phone: "(647) 694-4275",
+      resource_email: "helpline@youthline.ca",
+      is_accessible: true,
+    },
+    {
+      id: 15,
+      resource_name: "Asian Community AIDS Services (ACAS)", // add lat and lng 43.652117615488805, -79.39821304544161
+      resource_address: "Suite 410, 260 Spadina Ave",
+      resource_website: "https://acas.org/",
+      resource_phone: "(416) 963-4300",
+      resource_email: "info@acas.org",
+      is_accessible: false,
+    },
     // ...
   ]);
 };

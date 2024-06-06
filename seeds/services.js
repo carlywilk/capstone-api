@@ -117,6 +117,51 @@ exports.seed = async function(knex) {
       resource_id: 9, // 2-Spirited People of the 1st Nations
       service_type: "Indigenous Health & Non-Western Medicine"
     },
+    {
+      id: 21,
+      resource_id: 10, // THE 519
+      service_type: "Information & Resources"
+    },
+    {
+      id: 22,
+      resource_id: 11, // Rainbow Health Ontario
+      service_type: "Information & Resources"
+    },
+    {
+      id: 23,
+      resource_id: 12, // Toronto Pflag
+      service_type: "Support Phone Line"
+    },
+    {
+      id: 24,
+      resource_id: 13, // Planned Parenthood Toronto
+      service_type: "Sexual Health"
+    },
+    {
+      id: 25,
+      resource_id: 13, // Planned Parenthood Toronto
+      service_type: "Information & Resources"
+    },
+    {
+      id: 26,
+      resource_id: 14, // LGBT Youthline
+      service_type: "Information & Resources"
+    },
+    {
+      id: 27,
+      resource_id: 14, // LGBT Youthline
+      service_type: "Support Phone Line"
+    },
+    {
+      id: 28,
+      resource_id: 15, // Asian Community AIDS Services (ACAS)
+      service_type: "Information & Resources"
+    },
+    {
+      id: 29,
+      resource_id: 15, // Asian Community AIDS Services (ACAS)
+      service_type: "Sexual Health"
+    },
     // ...
   ]);
 };
