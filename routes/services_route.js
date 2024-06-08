@@ -5,8 +5,8 @@ router
     .route("/")
     .get(servicesController.index)
 
-// router
-//     .route("/:id/services")
-//     .get(servicesController.resourceServices)
+router
+    .route("/:serviceType")
+    .get(servicesController.findService)
 
 module.exports = router;

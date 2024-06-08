@@ -23,11 +23,3 @@ exports.up = function(knex) {
 exports.down = function(knex) {
     return knex.schema.dropTable("resource").dropTable("services");
 };
-
-
-// run the following command to create table
-// npx knex migrate:latest
-
-
-// run the following command to seed the table
-// npx knex seed:run

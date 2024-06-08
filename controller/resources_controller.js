@@ -12,11 +12,10 @@ const index = async(_req, res) => {
 const findResource = async (req, res) => {
     try {
         const resourceFound = await knex("resource")
-        
 
         if (resourceFound === 0) {
             return res.status(404).json({
-                message: `Warehouse with ID ${req.params.id} not found`
+                message: `Resource with ID ${req.params.id} not found`
             });
         }
         const resourceData = resourceFound[0];
