@@ -2,7 +2,7 @@
 **Queer Health Hub (QHH)**
 
 
-<img src="./assets/logo/e5.png" width="200">
+<img src="./assets/logo/qhh-logo.svg" width="200">
 
 
 
