@@ -22,10 +22,11 @@ Deployed website can be found [here]() ❗️ add link
 ## Screenshots
 The following two screenshots show the dynamic data for this app in MySQL, the first being a table of resources and the second being a list of services offered at each resource. 
 
-<img src="./assets/images/resources-mysql-table.png" width="600">
 Image 1: Screenshot of resources data in MySQL table.
+<img src="./assets/images/resources-mysql-table.png" width="750">
 
 
+Image 2: Screenshot of services data in MySQL table.
 <img src="./assets/images/services-mysql-table.png" width="350">
 
 
