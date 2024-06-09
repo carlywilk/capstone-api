@@ -15,7 +15,7 @@ Client Repo can be found [here](https://github.com/carlywilk/capstone.git)
 
 
 ## Features
-The data for the map is loaded dynamically, clicking on the point of a resource on the map or expanding the accordion for a resource in the list view page brings up the details for that resource, including a list of services provided.
+The data for the map is loaded dynamically, clicking on a map pin or expanding the accordion in the list view page brings up the details for that resource, including a list of services provided.
 
 
 ## Screenshots
