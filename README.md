@@ -15,8 +15,7 @@ Client Repo can be found [here](https://github.com/carlywilk/capstone.git)
 
 
 ## Features
-Deployed website can be found [here]() ❗️ add link
-
+The data for the map is loaded dynamically, clicking on the point of a resource on the map or expanding the accordioan for a resource in the list view page brings up the details for that resource, including a list of services provided for that resource.
 
 
 ## Screenshots
@@ -84,29 +83,34 @@ npm start
 ```
   GET /api/resources
 ```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| Parameter   | Type     | Description                |
+| :---------- | :------- | :------------------------- |
+| `serverUrl` | `string` | **Required:** Server URL   |
 
 #### Get one resource
 ```
   GET /api/resources/${id}
 ```
-| Parameter | Type     | Description                                  |
-| :-------- | :------- | :------------------------------------------- |
-| `api_key` | `string` | **Required:** Your API key & ID of resource  |
+| Parameter       | Type      | Description                       |
+| :-------------- | :-------- | :-------------------------------- |
+| `serverUrl`     | `string`  | **Required:** Server URL          |
+| `resource_id`   | `integer` | **Required:** ID of resource      |
 
-#### Get all services types for one resource
+#### Get all service types for one resource
+- Service filter utility is not implemented in the current version of app, therefore this call is not currently in use. 
 ```
   GET /api/resources/${id}/services
 ```
-| Parameter | Type     | Description                                  |
-| :-------- | :------- | :------------------------------------------- |
-| `api_key` | `string` | **Required:** Your API key & ID of resource  |
+| Parameter        | Type      | Description                                   |
+| :--------------- | :-------- | :-------------------------------------------- |
+| `serverUrl`      | `string`  | **Required:** Server URL                      |
+| `resource_id`    | `integer` | **Required:** ID of resource                  |
+| `service_type`   | `string`  | **Required:** Service type (eg. Primary Care) |
 
 
 
 ## Insights and Lessons Learned
+- Using SQL to store the data for this app was useful, not just for clarity purposes, but also in terms of understanding how the data interacted with itself. This in turn clarified the knex and axios calls when coding app functionality. 
 
 
 
