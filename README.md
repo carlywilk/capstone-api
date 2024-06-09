@@ -15,13 +15,14 @@ Client Repo can be found [here](https://github.com/carlywilk/capstone.git)
 
 
 ## Features
-The data for the map is loaded dynamically, clicking on the point of a resource on the map or expanding the accordioan for a resource in the list view page brings up the details for that resource, including a list of services provided for that resource.
+The data for the map is loaded dynamically, clicking on the point of a resource on the map or expanding the accordion for a resource in the list view page brings up the details for that resource, including a list of services provided.
 
 
 ## Screenshots
 The following two screenshots show the dynamic data for this app in MySQL, the first being a table of resources and the second being a list of services offered at each resource. 
 
 Image 1: Screenshot of resources data in MySQL table.
+
 <img src="./assets/images/resources-mysql-table.png" width="850">
 
 
