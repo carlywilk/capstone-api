@@ -3,9 +3,24 @@
  * @returns { Promise<void> } 
  */
 exports.seed = async function(knex) {
-  await knex('resource').del()
-  await knex('resource').insert([
-    {
+  // await knex('resource').del(); 
+  // await knex('resource').insert([
+    try {
+      // Start a transaction
+      await knex.transaction(async (trx) => {
+        // Delete or update dependent records first
+        // Example: Delete all services records referencing resources before seeding
+        await trx('services').whereExists(function() {
+          this.select('*').from('resource').whereRaw('services.resource_id = resource.id');
+        }).del();
+  
+        // Clear existing resource records
+        await trx('resource').del();
+  
+        // Insert new resource records
+        await trx('resource').insert([
+          {
+    
       id: 1,
       resource_name: "Women's College Hospital",
       resource_address: "76 Grenville Street",
@@ -140,5 +155,69 @@ exports.seed = async function(knex) {
       resource_email: "info@acas.org",
       is_accessible: false,
     },
+    {
+      id: 16,
+      resource_name: "TeleTest",
+      resource_address: "N/A",
+      resource_website: "https://teletest.ca/",
+      resource_phone: "N/A", 
+      resource_email: "info@teletest.ca",
+      is_accessible: true,
+    },
+    {
+      id: 17,
+      resource_name: "Casey House",
+      resource_address: "119 Isabella Street",
+      resource_website: "https://caseyhouse.ca/",
+      resource_phone: "(416) 962-7600", 
+      resource_email: "info@caseyhouse.ca",
+      is_accessible: true,
+    },
+    {
+      id: 18,
+      resource_name: "Transgender Youth Clinic",
+      resource_address: "170 Elizabeth Street",
+      resource_website: "https://www.sickkids.ca/en/care-services/clinics/transgender-youth-clinic/",
+      resource_phone: "(416) 813-5804", 
+      resource_email: "N/A",
+      is_accessible: true,
+    },
+    {
+      id: 19,
+      resource_name: "Black CAP",
+      resource_address: "20 Victoria Street",
+      resource_website: "https://blackcap.ca/",
+      resource_phone: "(416) 977-9955", 
+      resource_email: "info@black-cap.com",
+      is_accessible: true,
+    },
+    {
+      id: 20,
+      resource_name: "Breakaway: Pieces to Pathways Program",
+      resource_address: "21 Strickland Avenue",
+      resource_website: "https://breakawaycs.ca/programs/pieces-to-pathways/",
+      resource_phone: "(416) 537-9346", 
+      resource_email: "p2pinfo@breakawaycs.ca",
+      is_accessible: true,
+    },
+    {
+      id: 21,
+      resource_name: "Ontario Telemedicine Network",
+      resource_address: "N/A",
+      resource_website: "https://otn.ca/",
+      resource_phone: "(416) 446-4110", 
+      resource_email: "N/A",
+      is_accessible: true,
+    },
   ]);
+  await trx.commit();
+      console.log('Seeding completed successfully.');
+    });
+  } catch (error) {
+    // Rollback the transaction if there's an error
+    console.error('Error seeding database:', error);
+  } finally {
+    // Ensure the database connection is properly closed
+    await knex.destroy();
+  }
 };
