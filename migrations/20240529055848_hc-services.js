@@ -9,7 +9,7 @@ exports.up = function(knex) {
             table
                 .integer("resource_id")
                 .unsigned()
-                .references("resource.id")
+                .references("resources.id")
             table.string("service_type").notNullable();
             table.timestamp("created_at").defaultTo(knex.fn.now());
         });

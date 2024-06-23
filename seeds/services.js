@@ -5,6 +5,9 @@
 
 exports.seed = async function(knex) {
   await knex('services').del();
+
+  // console.log("Trying to connect to database...");
+  
   await knex('services').insert([
     {
       id: 1,
@@ -248,4 +251,5 @@ exports.seed = async function(knex) {
       service_type: "Harm Reduction"
     },
   ]);
+  // console.log("Successfully inserted services data!");
 };
