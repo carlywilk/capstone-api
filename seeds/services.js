@@ -253,3 +253,10 @@ exports.seed = async function(knex) {
   ]);
   // console.log("Successfully inserted services data!");
 };
+
+
+
+
+
+// SEED COMMAND TO RUN (locally and on heroku)
+// npx knex seed:run --specific=services.js
